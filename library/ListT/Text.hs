@@ -19,9 +19,6 @@ utf8ByteString =
         Nothing -> mzero
         Just (chunk, stream') -> 
           decode chunk & \(TE.Some result leftover decode') ->
-            if
-              | not (T.null result) -> cons result (loop decode' stream')
-              | not (B.null leftover) -> loop decode' stream'
-              | otherwise -> mzero
-              
+            bool (cons result) id (T.null result) (loop decode' stream')
+
 
