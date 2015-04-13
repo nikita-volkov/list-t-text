@@ -10,7 +10,10 @@ import qualified Data.Text as T
 import qualified Data.ByteString as B
 
 
-utf8ByteString :: Transformation m ByteString Text
+-- |
+-- A transformation of a stream of byte-strings 
+-- to a stream of text chunks decoded using UTF-8.
+utf8ByteString :: Monad m => Transformation m ByteString Text
 utf8ByteString =
   loop TE.streamDecodeUtf8
   where
