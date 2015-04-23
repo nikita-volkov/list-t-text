@@ -1,11 +1,11 @@
 name:
   list-t-text
 version:
-  0.1.0.0
+  0.1.0.1
 synopsis:
-description:
+  A streaming text codec
 category:
-  Streaming, HTTP
+  Streaming, HTTP, Codec
 homepage:
   https://github.com/nikita-volkov/list-t-text
 bug-reports:

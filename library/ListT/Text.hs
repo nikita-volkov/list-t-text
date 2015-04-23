@@ -24,4 +24,3 @@ utf8ByteString =
           decode chunk & \(TE.Some result leftover decode') ->
             bool (cons result) id (T.null result) (loop decode' stream')
 
-
