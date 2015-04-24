@@ -1,7 +1,7 @@
 name:
   list-t-text
 version:
-  0.1.0.1
+  0.1.0.2
 synopsis:
   A streaming text codec
 category:
@@ -71,7 +71,7 @@ test-suite hspec
   build-depends:
     -- 
     hspec == 2.1.*,
-    QuickCheck >= 2.6 && < 2.8,
+    QuickCheck >= 2.6 && < 2.9,
     quickcheck-instances,
     -- 
     text,
@@ -81,4 +81,5 @@ test-suite hspec
     list-t,
     transformers,
     -- 
-    base-prelude
+    base-prelude,
+    base
