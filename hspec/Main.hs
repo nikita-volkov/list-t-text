@@ -13,10 +13,10 @@ import Data.Functor.Identity
 
 main = 
   hspec $ do
-    context "utf8ByteString" $ do
+    context "decodeUTF8" $ do
       it "back and forth" $
         property $ \text ->
-          TE.encodeUtf8 text & streamByteString 3 & utf8ByteString & L.toList & runIdentity & mconcat &
+          TE.encodeUtf8 text & streamByteString 3 & decodeUTF8 & L.toList & runIdentity & mconcat &
           (==) text
 
 streamByteString :: Monad m => Int -> ByteString -> L.ListT m ByteString
