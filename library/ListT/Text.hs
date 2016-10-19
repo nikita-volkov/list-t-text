@@ -13,7 +13,7 @@ import qualified Data.ByteString as B
 -- |
 -- A transformation of a stream of byte-strings 
 -- to a stream of text chunks decoded using UTF-8.
-decodeUTF8 :: Monad m => Transformation m ByteString Text
+decodeUTF8 :: Monad m => ListT m ByteString -> ListT m Text
 decodeUTF8 =
   loop TE.streamDecodeUtf8
   where
